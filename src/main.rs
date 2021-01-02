@@ -55,7 +55,9 @@ fn main() -> Result<()> {
     let reader = BufReader::new(input);
     let notebook: Notebook = serde_json::from_reader(reader)?;
 
-    println!("{}", &notebook);
+    let formatted = notebook.to_string();
+
+    std::fs::write(&args.output, &formatted)?;
 
     Ok(())
 }

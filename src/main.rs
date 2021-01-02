@@ -5,6 +5,8 @@ use std::io::BufReader;
 #[macro_use]
 extern crate serde;
 
+type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+
 #[derive(Debug)]
 struct Args {
     input: String,
@@ -28,13 +30,13 @@ impl fmt::Display for Notebook {
             for line in &cell.source {
                 write!(f, "{}", line)?;
             }
+
+            write!(f, "\n\n")?;
         }
 
         Ok(())
     }
 }
-
-type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
 
 fn parse_args() -> Result<Args> {
     let mut args = pico_args::Arguments::from_env();

@@ -26,7 +26,7 @@ struct NotebookCell {
 
 impl fmt::Display for Notebook {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        for cell in self.cells.iter().filter(|c| c.cell_type != "markdown") {
+        for cell in self.cells.iter().filter(|c| c.cell_type == "code") {
             for line in &cell.source {
                 write!(f, "{}", line)?;
             }

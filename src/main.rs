@@ -42,8 +42,8 @@ fn parse_args() -> Result<Args> {
     let mut args = pico_args::Arguments::from_env();
 
     let args = Args {
-        input: args.value_from_str("--input")?,
-        output: args.value_from_str("--output")?,
+        input: args.value_from_str(["-i", "--input"])?,
+        output: args.value_from_str(["-o", "--output"])?,
     };
 
     Ok(args)

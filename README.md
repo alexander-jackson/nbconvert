@@ -9,7 +9,7 @@ whitespace and the cell counts inside the file it produces. `nbconvert` instead
 just produces the code itself, as if you had written it as a standalone file
 making it easier to work with in Git.
 
-## Installation
+## Installation
 
 `nbconvert` can be installed by cloning the repository and using `cargo` to
 build and install a release binary:
@@ -20,7 +20,7 @@ cd nbconvert/
 cargo install --path .
 ```
 
-## Usage
+## Usage
 
 To convert a Jupyter notebook to a Python file, invoke as follows:
 
